@@ -22,3 +22,20 @@ issueCommandToDevice() {
     -H "$contentHeader" \
     -d "$payload"
 }
+
+createGroup() {
+  local name="$1"
+  local refresh_interval="$2"
+  local parent_server_group_id="341753"
+  local param="servergroups?o=$orgID"
+
+  local payload="{\"name\": \"$name\", \"refresh_interval\": \"$refresh_interval\", \"parent_server_group_id\": \"$parent_server_group_id\"}"
+
+  echo $payload
+
+  curl -s -X POST \
+    "$apiBaseURL/$param" \
+    -H "$authHeader" \
+    -H "$contentHeader" \
+    -d "$payload"
+}

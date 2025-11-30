@@ -129,3 +129,24 @@ searchWorkletsByUUID() {
     -H "$authHeader" \
     -H "$contentHeader"
 }
+
+# https://developer.automox.com/openapi/axconsole/operation/getServerGroups/
+getAllGroups() {
+  local param="servergroups?o=$orgID&page=0&limit=500"
+
+  curl -v -X GET \
+    "$apiBaseURL/$param" \
+    -H "$authHeader" \
+    -H "$contentHeader"
+}
+
+# https://developer.automox.com/openapi/axconsole/operation/createServerGroup/
+getSpecificGroupByID() {
+  local group_id="${1:-$grolupID}"
+  local param="servergroups/$group_id?o=$orgID"
+
+  curl -v -X GET \
+    "$apiBaseURL/$param" \
+    -H "$authHeader" \
+    -H "$contentHeader"
+}

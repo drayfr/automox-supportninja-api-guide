@@ -4,6 +4,7 @@ echo "Select function to execute:"
 echo "1) Devices"
 echo "2) Packages"
 echo "3) Worklets"
+echo "4) Groups"
 read -rp "Enter choice: " choice
 
 case "$choice" in
@@ -15,6 +16,9 @@ case "$choice" in
     ;;
   3)
     source ./worklets.sh
+    ;;
+  4)
+    source ./groups.sh
     ;;
   *)
     echo "Invalid"
