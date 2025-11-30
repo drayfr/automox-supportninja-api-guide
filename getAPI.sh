@@ -54,6 +54,16 @@ getSoftwarePackagesByDevice() {
     -H "$contentHeader"
 }
 
+# https://developer.automox.com/openapi/axconsole/operation/getOrganizationPackages/
+getSoftwarePackagesForAllDevices() {
+  local param="orgs/$orgID/packages?includeUnmanaged=0&awaiting=0&page=0&limit=500"
+
+  curl -v X GET \
+    "$apiBaseURL/$param" \
+    -H "$authHeader" \
+    -H "$contentHeader"
+}
+
 # https://developer.automox.com/openapi/axconsole/operation/getDeviceQueues/
 upQueueByDevice() {
   local device_id="${1:-$serverID}"
