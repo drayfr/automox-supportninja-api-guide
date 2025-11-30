@@ -106,7 +106,7 @@ getDeviceInventoryCategories() {
     -H "$contentHeader"
 }
 
-https://developer.automox.com/openapi/axconsole/operation/searchWorklets/
+# https://developer.automox.com/openapi/axconsole/operation/searchWorklets/
 searchWorklets() {
   # https://console.automox.com/api/wis/search?q=string&page=0&limit=25&sort=create_time%3Aasc&category=Data%20Collection%20%26%20Auditing&os_family=Windows&device_type=WORKSTATION&newly_added=false' \
   # Edit the query based on use case/needs
