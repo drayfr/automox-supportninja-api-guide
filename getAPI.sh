@@ -113,7 +113,7 @@ searchWorklets() {
 
   local param="wis/search?q=string&page=0&limit=25&os_family=Mac&device_type=server"
 
-  curl -v -X GET \
+  curl -s -X GET \
     "$apiBaseURL/$param" \
     -H "$authHeader" \
     -H "$contentHeader"
@@ -124,7 +124,7 @@ searchWorkletsByUUID() {
   local worklet_uuid="${1:-$workletUUID}"
   local param="wis/search/$worklet_uuid"
 
-    curl -v -X GET \
+    curl -s -X GET \
     "$apiBaseURL/$param" \
     -H "$authHeader" \
     -H "$contentHeader"
