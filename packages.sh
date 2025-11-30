@@ -15,5 +15,5 @@ case "$choice" in
     getSoftwarePackagesByDevice "${device[@]}" | jq
     ;;
   2)
-    getSoftwarePackagesForAllDevices | jq
+    getSoftwarePackagesForAllDevices
 esac

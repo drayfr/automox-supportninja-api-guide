@@ -8,6 +8,8 @@ serverUUID="1fbab112-db86-4876-a89c-a70648a11c26"
 groupID="341893"
 
 
+workletUUID="0637bf85-4372-5ac8-9a4b-3af6259c7b26"
+
 # Load environment variables
 if [ -f .env ]; then
     source .env
