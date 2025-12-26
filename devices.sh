@@ -14,6 +14,7 @@ echo "5) upQueueByDevice(InstallUpdate)"
 echo "6) issueCommandToDevice"
 echo "7) getDeviceInventory"
 echo "8) getDeviceInventoryCategories"
+echo "9) upComingCommandQueuePerDevice"
 read -rp "Enter choice: " choice
 
 # specificDevice "Reboot"
@@ -35,7 +36,7 @@ case "$choice" in
     ;;
   4)
     read -rp "Enter the device ID (Default: 6109755): " device
-    upQueueByDevice "$device" "Reboot" | jq
+    upQueueByDevice "$device" "Reboot"
     ;;
   5)
     read -rp "Enter the device ID (Default: 6109755): " device
@@ -64,6 +65,10 @@ case "$choice" in
   8)
     read -rp "Enter the device UUID(Default: 1fbab112-db86-4876-a89c-a70648a11c26): " device
     getDeviceInventoryCategories "$device" | jq
+    ;;
+  9)
+    read -rp "Enter the device ID (Default: 6109755): " device
+    upComingCommandQueuePerDevice "$device"
     ;;
   *)
     echo "Invalid choice"

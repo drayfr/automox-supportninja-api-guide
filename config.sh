@@ -19,4 +19,7 @@ else
 fi
 
 authHeader="Authorization: Bearer $token"
+orgHeader="ax-organization-uuid: $orgUUID"
 contentHeader="Content-Type: application/json"
+
+defaultEventDate="2025-12-02"

@@ -150,3 +150,26 @@ getSpecificGroupByID() {
     -H "$authHeader" \
     -H "$contentHeader"
 }
+
+upComingCommandQueuePerDevice() {
+  local device_id="${1:-$serverID}"
+  local param="servers/$device_id/queues?o=$orgID"
+
+  echo "$apiBaseURL/$param"
+
+  curl -i -X GET \
+    "$apiBaseURL/$param" \
+    -H "$authHeader" \
+    -H "$contentHeader"
+}
+
+getAuditTrail() {
+  local dateOfEvent="${1:-$defaultEventDate}"
+  local orgUuid="$orgUUID"
+  local param="audit-service/v1/orgs/$orgUuid/events?date=$dateOfEvent&cursor=6672200dd10935351f936399&limit=500"
+
+  curl -s -X GET \
+    "$apiBaseURL/$param" \
+    -H "$authHeader" \
+    -H "$orgHeader"
+}

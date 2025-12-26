@@ -14,5 +14,5 @@ case "$choice" in
     ;;
   2)
     read -rp "Enter the worklet uuid (Default Sample: "0637bf85-4372-5ac8-9a4b-3af6259c7b26")" -a worklet
-    searchWorkletsByUUID "$device" | jq
+    searchWorkletsByUUID "$worklet" | jq
 esac

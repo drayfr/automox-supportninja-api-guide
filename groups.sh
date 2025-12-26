@@ -18,7 +18,7 @@ case "$choice" in
     ;;
   2)
     read -rp "Enter the group ID (Default Sample: "341893")" -a group
-    getSpecificGroupByID "$group" | jq\
+    getSpecificGroupByID "$group" | jq
     ;;
   3)
     read -rp "Enter the group name: " -a name
